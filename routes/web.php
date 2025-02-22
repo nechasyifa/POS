@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PenjualanController;
+use App\Http\Controllers\LevelController;
 
 
 /*
@@ -18,11 +19,13 @@ use App\Http\Controllers\PenjualanController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('welcome');
+});
 
-Route::get('/', [HomeController::class, 'home']);
+Route::get('/level', [LevelController::class, 'index']);
+
+// Route::get('/', [HomeController::class, 'home']);
 
 Route::prefix('category')->group(function () {
     Route::get('/food-beverage', [ProductController::class, 'foodbeverage']);
